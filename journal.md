@@ -113,8 +113,168 @@ This meant I unfortunately had to restart the routing that I did start, and use 
 
 <img width="1008" height="437" alt="image" src="https://github.com/user-attachments/assets/8aa37fbd-7c76-40fb-ba99-4dbc7364dd45" />
 
+
 I then double checked to make sure that the MAX usb host controller would be able to handle up to 4.2V, but then saw that it could only handle from 3.0-3.6V. I did some thinking to determine what would be the best path moving forward. I came to the conclusion that it would be best to either scrap the PMIC circuit entirely, or instead use an LDO to drop the voltage to 3V3, depending on which would be cheaper or more efficient. Right now I believe that adding an LDO would be the best option, especially since the $3 extra loading fee for having 3 components (charge [might need an LDO], boost to 5V, drop to 3V3) would probably add up to be more.
 
 However, I'll be reusing my own symbol for the nRF52840 variant because it has a footprint that's easier to route, and I wouldn't really need the VDDH pin if I could directly supply 3V3.
 
+# 4/20/26
 
+### 35m
+
+So it's been a while because I've been busy recently, so I decided to make sure I wasn't being stupid earlier, and turns out I was.
+
+I didn't have a proper connection to a 5V OTG output, so I looked at the datasheet and had trouble determining what pin would be getting the 5V when in boost mode
+
+
+![image](https://stasis.hackclub-assets.com/images/1776694411764-ac25zy.png)
+
+So I asked around on the kicad discord for help
+
+I also double checked some some of the components to make sure they could actually handle the voltage the pins could have, and I decided to assign the footprints/add a part number to the parts now
+
+
+![image](https://stasis.hackclub-assets.com/images/1776694523787-vrvfb8.png)
+
+# 4/22/26
+
+### 1h
+
+A kind soul in the Kicad discord server drew me a diagram of how the boost mode would work, sending current through the charging port.
+
+
+![image](https://stasis.hackclub-assets.com/images/1776867001648-gqpvxb.png)
+
+The fun part is I can't really use this PMIC. In the process of trying to learn the power path, I stumbled upon this part of the documentation
+
+
+![image](https://stasis.hackclub-assets.com/images/1776867041987-wdh1da.png)
+
+This means that just having a charged battery does not mean i can get 3V3 (or really close to it for efficiency) power, which kind of defeats a large point of having a battery
+
+I then stumbled upon bq25898D which has all the same features BUT with only the battery being enough
+
+
+![image](https://stasis.hackclub-assets.com/images/1776867387796-d6ktqr.png)
+
+
+Unfortunately, the part isn't really in great stock for JLCPCB and is quite expensive
+
+
+![image](https://stasis.hackclub-assets.com/images/1776867439207-ja02ft.png)
+
+
+The awesome part, however, is that i then found the bq24259 chip, which, again has all the requirements---but also for a much cheaper price with a lot more availability
+
+
+![image](https://stasis.hackclub-assets.com/images/1776867705688-qnwf1f.png)
+
+What's even better is that I don't need a USB mux anymore for identification between the PMIC and the nRF chip
+
+Overall this search took about an hour, looking through many TI parts and analog devices parts, but now I'm finally ready to move on and continue the schematic
+
+# 4/23/26
+### 2.5h
+
+Now that I knew what to look for (the application guide), making a symbol was going much faster
+
+
+![image](https://stasis.hackclub-assets.com/images/1776952251702-nlyn8y.png)
+
+However, I got a bit confused when seeing that the PGND pin seemed to have two different grounds. Even though I haven't started the schematic yet, I decided it was still something good to know
+
+
+![image](https://stasis.hackclub-assets.com/images/1776952308326-ksved4.png)
+
+So I asked around on the kicad discord, and finished up the symbol while I was waiting, eventually learning that the difference is between analog ground and power ground, where power ground is usually more noisy than the analog ground used as a reference point
+
+
+![image](https://stasis.hackclub-assets.com/images/1776954120120-4xbx2z.png)
+
+I started the routing and initially put the pull-ups and pull-downs near the schematic, but I decided that it would look cleaner to separate them
+
+
+![image](https://stasis.hackclub-assets.com/images/1776956558699-oaxfri.png)
+
+
+When working on the SDA, SCL, INT pins, I realized that there was no symbol for Vref, so I went through to find what voltage the nRF chip communicated in I2C, which turned out to be whatever voltage I would be supplying it (3v3)
+
+
+![image](https://stasis.hackclub-assets.com/images/1776956815408-817b5b.png)
+
+I then got confused on what the PHY meant
+
+![image](https://stasis.hackclub-assets.com/images/1776957559513-1rucil.png)
+
+Turns out that it's the part that communicates with the USB power supply, and I figured that i could use the MAX3421E for that rather than keeping it off during charging. After trying to confirm with the datasheet, there wasn't anything I found relating to PHY/selecting for power. This meant that I'd need two more chips (USB mux & usb phy). 
+
+After searching for a new PMIC, i found the bq24295, but strangely, there's a minimum current, which doesn't really work well with wired peripherals that are generally designed to be low power.
+
+![image](https://stasis.hackclub-assets.com/images/1776958633121-0fh4ze.png)
+
+I then found the bq25890h which is quite literally perfect in pretty much every single way (USB implementation, can supply SYS with only a battery, it even has a pin to control a USB mux), BUT it still has the weird minimum current thing at a smaller 500mA (but still pretty big)
+
+
+![image](https://stasis.hackclub-assets.com/images/1776959769222-s3yxi4.png)
+
+However, there's still hope since it does say typical range, so I'm going to ask around to see what happens if a device would demand less current than the typical minimum
+
+P.S. because of all these changes I did decided to completely scrap the routing I already had
+
+# 4/24/26
+### 3h
+I decided that I would go along with using the BQ25890H because after asking around yesterday, it seemed that the "minimum" amps referred to the minimum that would be supplied given a certain charge.
+
+So I created a symbol and started the routing for it
+
+
+![image](https://stasis.hackclub-assets.com/images/1777037849148-6r0gbw.png)
+
+After getting to the ILIM pin, I had to do some research on what is a safe current to charge a lithium ion battery at, determining that it should be at most the capacity in amps
+
+
+![image](https://stasis.hackclub-assets.com/images/1777039139546-26vkb0.png)
+
+
+Since this could vary depending on the lithium ion battery I eventually choose, I decided to be very lenient, giving the near the maximum allowable current (since I could always limit it in firmware with the registers). After doing the simple calculation, this meant I had to use a 100 ohm resistor
+
+As I continued, I realized that I don't know whether the part footprints are in metric or imperial, so I went back and double checked, and it seemed that they were in imperial, so I had to go back and change the footprints of the parts already placed
+
+As I was sourcing a 4.7 uF capacitor, I had to decide whether I should accept a 20% tolerance or a 10% tolerance (with 20% tolerance being a smaller capacitor). I eventually decided to go with 10% for stability
+
+
+![image](https://stasis.hackclub-assets.com/images/1777041418584-8wehdq.png)
+
+I then got to the part with the thermistor pin, and I looked to see if there was a way to disable it since it is very unlikely for the battery to get to high enough temperatures for it to be dangerous. However, there was not, so I had to find the part where I do the calculations to set the temperature range.
+
+The problem here is that I had to know what type of thermistor the battery would be using. After scrolling on aliexpress for a while, I found that vendors don't typically list this information
+
+After spending some more time looking, I still couldn't really find anything, so I decided that an external thermistor close to the battery would have to do and copied the resistor values that TI used (0 to 60 degree c range)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777043513914-cn9eks.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777044037184-f0a6hf.png)
+
+Then, I finished up the schematic for the PMIC and found a USB mux that I'd be able to use
+
+
+![image](https://stasis.hackclub-assets.com/images/1777045134335-mulzbv.png)
+
+I quickly found the TS3USB30ERSWR, and luckily it already has a symbol in kicad for me to use, allowing me to quickly finish routing this part
+
+
+![image](https://stasis.hackclub-assets.com/images/1777045667426-bz2fkt.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777046039086-1t4qwq.png)
+
+
+And here is the parts list that I've been maintaining
+
+
+![image](https://stasis.hackclub-assets.com/images/1777046065962-a14i9e.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777046078384-zumwmz.png)
