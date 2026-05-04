@@ -306,3 +306,52 @@ After doing a bit of part sourcing for the resistors and a capacitor, I quickly 
 
 
 ![image](https://stasis.hackclub-assets.com/images/1777676921948-lcyhzj.png)
+
+# 5/4/26
+### 50m
+
+First I checked over my symbol for the nRF52840 to make sure everything was good (I did not trust the me who made the symbol way back when). Luckily everything seemed to be fine
+
+
+![image](https://stasis.hackclub-assets.com/images/1777933231363-5xvkp9.png)
+
+I started with all the VDD pins and their decoupling caps, having to source 100nF
+
+
+![image](https://stasis.hackclub-assets.com/images/1777933767295-wutuwv.png)
+
+Then I moved on to all of the caps for the DEC pins, deciding to put them near the decoupling caps for the VDD pins to make the schematic neater
+
+During this process I had to source a 100pF cap
+
+Some of the DEC pins were missing, causing me to double check with the documentation, but the pins weren't there either, so I'm assuming it has to do with the lower pin count of the footprint I'm using
+
+Anyways here is the nRF with the DEC pins done
+
+
+![image](https://stasis.hackclub-assets.com/images/1777934313043-8w3cbv.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777934324745-om5j8r.png)
+
+
+I then focused on the DCC pin, which required a lot of inductance (and required me to source two inductors)
+
+Unfortunately the 10uH inductor must be able to handle 50mA, and JLCPCB doesn't have those under extended preferred or basic components
+
+Either way, this didn't take too much time, and I was able to easily finish
+
+
+![image](https://stasis.hackclub-assets.com/images/1777935233877-9w65ak.png)
+
+At this point, I believe all that's left for the nRF is the antenna, XTAL, and the routing to the other components for control
+
+I was going to start sourcing the mandatory crystal on JLC, but I then say that there were two categories, one called crystals and the other called crystal oscillators
+
+I don't know the difference yet, but that'll be for the beginning of next time
+
+
+![image](https://stasis.hackclub-assets.com/images/1777935699890-qby5zv.png)
+
+
+
