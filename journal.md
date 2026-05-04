@@ -278,3 +278,31 @@ And here is the parts list that I've been maintaining
 
 
 ![image](https://stasis.hackclub-assets.com/images/1777046078384-zumwmz.png)
+
+# 5/2/26
+### 53m
+
+First, I made a symbol for the voltage regulator. This was real fast, especially compared to the other symbols because of a small number of pins and due to already having lots of practice
+
+
+![image](https://stasis.hackclub-assets.com/images/1777674394746-wt00y5.png)
+
+Also had to do some calculations to determine what value of resistors to use
+![image](https://stasis.hackclub-assets.com/images/1777674988413-roc8kb.png)
+
+I initially decided to use a 91k and 510k ohm resistor, but the only 91k ohm resistor requires a minimum purchase of 5,000 of them, so I had to choose different values
+
+
+![image](https://stasis.hackclub-assets.com/images/1777675435366-bs5oi4.png)
+
+I then decided to go with 82k and 430k + 30k series (460k) to get 3v3 since there's a minimum of only 1
+
+After doing a bit of part sourcing for the resistors and a capacitor, I quickly finished this part of the schematic (luckily was able to copy and paste some components I already used in the schematic)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777676891632-a7y7sk.png)
+
+![image](https://stasis.hackclub-assets.com/images/1777676907818-71ffxc.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777676921948-lcyhzj.png)
