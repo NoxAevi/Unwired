@@ -355,3 +355,51 @@ I don't know the difference yet, but that'll be for the beginning of next time
 
 
 
+# 5/4/26
+### 1h15m
+
+Turns out a crystal is a passive component while an oscillator builds upon that and is an active component. For the nRF I'll be using a crystal
+
+Sourcing it took a bit of time, especially because of the parameters I had to check, such as maximum shunt capacitance, ESR, etc., but I was able to find one
+
+I also looked through the documentation to see what would happen if I don't use an external ~32kHz crystal for the timing, and it seems that it can be more efficient with power (sacrificing accuracy)
+
+
+![image](https://stasis.hackclub-assets.com/images/1777944680377-q7ykm6.png)
+
+The only thing I am a bit concerned about is parasitic capacitances in the traces, so I started doing some research on how I would be able to account for it, but the best way to do so seems to be acknowledging it during the routing process
+
+After I looked a bit closer at the reference schematic though, I saw that nordic gives 2pF lower load capacitance to compensate, so I'll be doing the same
+
+
+![image](https://stasis.hackclub-assets.com/images/1777945335469-y7thrv.png)
+
+Now for the antenna, there were two types of symbols that I might choose, either dipole or just the antenna symbol. I also decided that I would look at the antenna footprints now, so I'd know what I'm doing somewhat later down the road.
+
+Since I've never really done an on-board antenna, this is where I turned to the internet.
+
+I looked at https://jlcpcb.com/blog/pcb-antenna-design-guide
+
+However, I was still a bit confused on how I would get the antenna to to properly matched to the frequency I want (2.4GHz)
+
+I then realized that there was already a footprint for 2.4GHz, meaning I don't really have to do much work
+
+
+![image](https://stasis.hackclub-assets.com/images/1777946394836-ozkwzt.png)
+
+When trying to source the 1.2pF capacitor required, there was none under basic/extended preferred, so I just plugged in numbers to see if I could make one using two other ones in series. I would be able to use both the 1.5 and 6 pF capacitors to get the 1.2 pF required
+
+
+![image](https://stasis.hackclub-assets.com/images/1777946888352-nkij09.png)
+
+
+When sourcing the inductors required, I saw that the JLC basic/extended preferred parts for inductors at the nH range were just crap, so I'm basically forced to use extended
+
+![image](https://stasis.hackclub-assets.com/images/1777947159215-9bbz8e.png)
+
+Anyways, that took a while, but here we are! Hopefully I remember to impedance match the trace going to the antenna later on
+
+
+![image](https://stasis.hackclub-assets.com/images/1777947740690-3ro78o.png)
+
+This honestly took way longer than expected, but at least I'm now set up for adding connections to other components now. (All that's left after that is to add the USB host controller/USB-C and practically copy/paste the nRF circuit on a board attached with a vcut to get the USB dongle)
