@@ -404,7 +404,7 @@ Anyways, that took a while, but here we are! Hopefully I remember to impedance m
 
 This honestly took way longer than expected, but at least I'm now set up for adding connections to other components now. (All that's left after that is to add the USB host controller/USB-C and practically copy/paste the nRF circuit on a board attached with a vcut to get the USB dongle)
 
-#5/5/26
+# 5/5/26
 ### 1h30m
 
 So, regarding planning for how I'm going to do the two boards (since one for tx, one for rx):
