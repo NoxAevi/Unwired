@@ -403,3 +403,75 @@ Anyways, that took a while, but here we are! Hopefully I remember to impedance m
 ![image](https://stasis.hackclub-assets.com/images/1777947740690-3ro78o.png)
 
 This honestly took way longer than expected, but at least I'm now set up for adding connections to other components now. (All that's left after that is to add the USB host controller/USB-C and practically copy/paste the nRF circuit on a board attached with a vcut to get the USB dongle)
+
+#5/5/26
+### 1h30m
+
+So, regarding planning for how I'm going to do the two boards (since one for tx, one for rx):
+
+I was initially going to use a vcut or mousebites, but this constitutes as multiple designs according to JLCPCB and costs extra
+
+I also realized that if I were to do this, I would have to switch over the nRF that I would be using to the aqfn footprint, which is much harder to route (to save on another $3 extended parts fee)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778029677128-o41lk1.png)
+
+
+In the end, I decided that I would just do the boards separately, and cuz why not, I'll be manually soldering the tx board (and maybe fail?)
+
+This also means that I'm no longer limited to basic/preferred parts, so I started by replacing the parts that could've been better selected (and 0402 package size cuz i already have a hotplate)
+
+Anyways this took a while since I also changed the footprints on the existing components (though I guess next time it might be better to just assign the footprints and labels for part # afterwords, contrary to what I thought before; it'd be helpful if I ever need to change stuff)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778031953922-s8ryn7.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778031975541-bdohe9.png)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778031986863-ww3005.png)
+
+Also, when looking at the nRF documentation, the pins for i2c are able to be changed in the registers thingy
+
+
+![image](https://stasis.hackclub-assets.com/images/1778032225020-gwn9nm.png)
+
+This means that it'd be best to choose which pins these guys route to afterwards (though I'll keep labels near the nRF to remind me later)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778032538297-j71wr6.png)
+
+Now onto the MAX usb host controller!!! (and the final step of this board!!!)
+
+I actually didn't check completely if this would be able to support having different voltage inputs in USB charging (idk if the CC pins must be configured correctly for that) or if it says it'll only be able to provide 5V via CC pin pulldowns, so that's what I did first
+
+When I saw this:
+
+
+![image](https://stasis.hackclub-assets.com/images/1778033054401-4glv1p.png)
+
+I thought it'd be a good idea to check if the PMIC i'm using has a way to limit the output current during usb OTG mode (and it ended up having one, with the min being 500mA)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778033102991-5nyc45.png)
+
+Anyways, the MAX chip appears to have to connections to the CC pins, so I'm going to have to research how a host/charging device would use them (if at all?)
+
+
+![image](https://stasis.hackclub-assets.com/images/1778033527053-suw3jc.png)
+
+I then learned that I should most likely include something to manage this after reading: https://nodeloop.org/guides/usb-c-pd-hardware-design/
+
+
+![image](https://stasis.hackclub-assets.com/images/1778033916182-ykts7m.png)
+
+![image](https://stasis.hackclub-assets.com/images/1778033842858-halxdf.png)
+
+So time to find another part!!!
+
+I came across the TUSB320LAI, which only handles CC control, which seems perfect for incorporating with the MAX chip
+
+![image](https://stasis.hackclub-assets.com/images/1778034271615-jgzvjr.png)
+
+Also skimmed through the document, and it doesn't seem too complicated to use, at least compared to the other register stuff I've seen already from other components in this project (what truly scares me is programming the nRF & the MAX chip)
