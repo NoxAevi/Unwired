@@ -197,7 +197,7 @@ And this is the general draft layout (will squish together by the end)
 
 ![image](https://stasis.hackclub-assets.com/images/1781906851518-1hf6e5.png)
 
-**Total Time Spent**: 1.75 hours
+**Total Time Spent:** 1.75 hours
 
 # 6/18/26: Finished Schematic!!!!!!!
 
@@ -254,7 +254,7 @@ And this is the entire schematic (I added the SWD pins, but not significant enou
 
 ![image](https://stasis.hackclub-assets.com/images/1781816795024-akkc29.png)
 
-**Total Time Spent**: 1.75 hours
+**Total Time Spent:** 1.75 hours
 
 # 5/16/26: CC control
 
