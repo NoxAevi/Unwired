@@ -5,6 +5,74 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/24/26: Nearly Finishing routing
+
+First I realized that I didn't really add a button required to control between on/off and the two modes of operation nor did I add status LEDs, so I first did that before continuing to route
+
+After I sourced my LEDs, I was having a bit of trouble about what resistor values I should use (and how close to the maximum I should get)
+
+I then remembered this convo from a while back:
+
+<img width="1312" height="654" alt="image" src="https://github.com/user-attachments/assets/7ab6ba3c-2df4-468b-86df-415c6131df09" />
+
+So I'm probably just going to stick with 10k resistors
+
+<img width="339" height="505" alt="image" src="https://github.com/user-attachments/assets/791b8bc8-546c-4791-94e3-75fa6b0197ec" />
+
+I also wanted to find another footprint for the button (because THT 6mmx6mm is lowk pretty big, and I might as well go SMD)
+
+Though, I think I'd also need to have a vertical button (this might have to be THT for more strength) because of how I want the final thing to look like
+
+
+<img width="339" height="505" alt="image" src="https://cdn.hackclub.com/019efb62-fbb8-7a97-8816-002697022b45/20260624_164619.jpg" />
+
+At least for the reset button I wanted it to look like the normal thin rectangular reset buttons that you'd see on something like an arduino nano, but even after adjusting the footprint parameters i kinda had difficulty finding the ones that looked like them and instead found stuff like this
+
+<img width="417" height="570" alt="image" src="https://github.com/user-attachments/assets/de0e9372-4dea-414b-b49a-cb0f5567844b" />
+
+<img width="181" height="198" alt="image" src="https://github.com/user-attachments/assets/446386ac-cd78-4351-a31d-e47bb9837341" />
+
+In the end I figured it didn't matter too much and just ended up choosing to use the THT button for reset and a normal vertical one for the user input
+
+And then immediately after I went to search for vertical button footprints already existing in kicad, I found footprints for exactly what I was looking for before, and used them to search for SMD buttons
+
+<img width="976" height="871" alt="image" src="https://github.com/user-attachments/assets/c2f18547-1982-47d7-8f26-4775e23931bb" />
+
+I then did the same with vertical buttons
+
+As it turns out, they're actually called right-angled buttons, which helped speed up the search
+
+I probably wouldn't have had an easy time searching for footprints for stuff like these if I started looking on JLC instead of on kicad
+
+<img width="259" height="180" alt="image" src="https://github.com/user-attachments/assets/5f0f7962-0204-4ea8-872f-81b3f14b4615" />
+
+It was pretty easy to then add these in to the PCB
+
+<img width="649" height="352" alt="image" src="https://github.com/user-attachments/assets/485bb888-4db4-4a8e-a77d-e6c902fc77a6" />
+
+<img width="541" height="382" alt="image" src="https://github.com/user-attachments/assets/13a80e6e-4894-44e8-9db7-ee37ca9a00e6" />
+
+Then, I worked on finishing the antenna, starting with the layout of the capacitors and inductors before calcuating the width needed to get a 50 ohm impedance
+
+The width needed ended up being insanely high, which was disappointing
+
+<img width="1284" height="702" alt="image" src="https://github.com/user-attachments/assets/d2757b67-c02f-487c-a5f9-a3361790cbc3" />
+
+It also resulted in it being pretty difficult to route (I ended up having to do dots as traces)
+
+<img width="513" height="556" alt="image" src="https://github.com/user-attachments/assets/9f0d9c02-c7e3-4602-81fd-437393ecd573" />
+
+After messing around a bit on the digikey calculator, ( found how why having more layers can be so important in a PCB (it makes it much, much easier to get lower impedances with a ground plane both above and below the trace)
+
+Anyways, I nearly finished everything and resized edge.cuts to match the actual shape of the board
+
+All that's left for the PCB is polishing (teardrops, screw holes, silkscreen [the front is gonna be a pain :C]) and the final connections (stuff like the LEDs and interrupts)
+
+<img width="591" height="664" alt="image" src="https://github.com/user-attachments/assets/664aca9e-8c03-4a6c-a7c2-e27a9cdd73ab" />
+
+**Total Time Spent:** 1.5 hours
+
+
 # 6/21/26: Routed nRF52840 ('cept antenna)
 
 I figured that the current spot would be a bit awkward to have a battery connector, so I decided to move it more towards the USB edge
