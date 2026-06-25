@@ -5,6 +5,39 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/25/26: Done with PCB completely (excluding silkscreen)
+
+I first started by finishing up all the connections for the remaining stuff that I set aside a while back
+
+<img width="558" height="708" alt="image" src="https://github.com/user-attachments/assets/ef025e38-51df-4d17-abbf-a8581eebf2c7" />
+
+When routing, this took quite a bit of time because there were multiple spots that were really conjested, like this
+
+<img width="891" height="562" alt="image" src="https://github.com/user-attachments/assets/3d92e8e2-7af7-40e2-b0da-47ff8d686400" />
+
+Following this, I used the DRC to mae sure I didn't miss anything major, and saw that there was an unconnected ground somewhere, but since the lines were really faint, it was difficult to see which spots specifically weren't connected
+
+<img width="519" height="123" alt="image" src="https://github.com/user-attachments/assets/05bf90d9-b46d-4ea5-a0e6-285193fb9af1" />
+
+<img width="466" height="339" alt="image" src="https://github.com/user-attachments/assets/f18b2975-824e-41ce-a23c-e8c11b1230ef" />
+
+Then, I added teardrops, and there were multiple instances of it being really weird, so I had to go in and fix that
+
+<img width="442" height="352" alt="image" src="https://github.com/user-attachments/assets/2a902d9a-8dc1-43de-971d-69b04ab49d1b" />
+
+The next step would be to add screw holes, which were WAY bigger than I was expecting, meaning that I had to do a bit of restructuring on the top right one, but unfortunately I don't believe I would be able to fit one on the bottom part at all without having some of the screw head hang off to the side
+
+<img width="985" height="591" alt="image" src="https://github.com/user-attachments/assets/fc656a72-0686-45e6-a9a9-3c8512281bfc" />
+<img width="337" height="328" alt="image" src="https://github.com/user-attachments/assets/9b95edf5-d296-4f69-b654-e2152887cb5f" />
+
+Finally, I decided to move the antenna way, way up because the battery is going to require about this much space (18500 li-ion w/ JST connector), making it probably better to have the antenna closer to the edge rather than in the middle ish
+
+<img width="522" height="723" alt="image" src="https://github.com/user-attachments/assets/c3e81102-ef2e-4079-8ae7-2e6c560d9ddd" />
+
+
+**Total Time Spent:** 1.75 hours
+
+
 # 6/24/26: Nearly Finishing routing
 
 First I realized that I didn't really add a button required to control between on/off and the two modes of operation nor did I add status LEDs, so I first did that before continuing to route
