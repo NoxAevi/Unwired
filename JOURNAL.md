@@ -5,6 +5,72 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/26/26: Silkscreen & etc done
+
+So... turns out that the impedance is actually affected by stuff being coplanar, which is an option not in digikey's calculator
+
+This means that I would have to redo the impedance matched traces that have ground planes surrounding them, which means this one
+
+<img width="586" height="444" alt="image" src="https://github.com/user-attachments/assets/8fedaf29-cbdb-4e9b-ae06-c25597d23ce2" />
+
+and this one
+
+<img width="283" height="609" alt="image" src="https://github.com/user-attachments/assets/2e1e7926-85bf-4d2b-91ea-6696657939a1" />
+
+This means I need a MUCH smaller trace for both of these
+
+<img width="1828" height="726" alt="image" src="https://github.com/user-attachments/assets/bb9900f7-421f-4f10-916b-63cf71cdb8f6" />
+
+<img width="468" height="666" alt="image" src="https://github.com/user-attachments/assets/dc71ad48-f6c7-4b97-b34e-e38b0e5110a8" />
+
+<img width="766" height="540" alt="image" src="https://github.com/user-attachments/assets/5b26956f-496b-4ff6-bd6f-bb692aa16f6c" />
+
+Now it's time for the ~~not so~~ fun part of resolving all of these warnings and errors!
+
+<img width="1113" height="690" alt="image" src="https://github.com/user-attachments/assets/b8a4c0d5-a52f-47f5-bb4a-29862037bc48" />
+
+When there wasn't enough thermal spokes, I used traces to try and replace them because both of them are just copper
+
+<img width="376" height="448" alt="image" src="https://github.com/user-attachments/assets/1d59295f-524a-46ff-859d-c908aac89846" />
+
+
+As you can tell, a lot of the reference silk screen had to be deleted due to there just not being enough room
+
+<img width="636" height="474" alt="image" src="https://github.com/user-attachments/assets/158ce8bf-7449-4a92-9ea0-fc5ece433ee5" />
+
+And this is the finished product
+
+<img width="702" height="712" alt="image" src="https://github.com/user-attachments/assets/e6ff9ed4-747f-4c03-a494-ca7bbda3a574" />
+
+I then wanted to make a render, so I had to find these missing 3d models
+
+<img width="555" height="717" alt="image" src="https://github.com/user-attachments/assets/2cf71957-178f-4a7d-8306-2918f44888bf" />
+
+For some reason, the button manufacturer's website provides a model where the colors are all wack
+
+<img width="492" height="444" alt="image" src="https://github.com/user-attachments/assets/8d5a5e16-8068-4ed4-a115-d8665a1e1320" />
+
+In the end, mouser ended up being the goat for finding these models, and they made it really easy to download them right after searching for the part
+
+<img width="694" height="216" alt="image" src="https://github.com/user-attachments/assets/739bb7ef-a759-4095-96e3-c9e4b286f86c" />
+
+Anyways this is how it looks fully populated
+
+<img width="502" height="690" alt="image" src="https://github.com/user-attachments/assets/50d44fa8-9cfc-4128-8962-ce9f84d4ffc2" />
+
+And finally, I did some silkscreen decor
+
+<img width="675" height="447" alt="image" src="https://github.com/user-attachments/assets/88b6f0e6-ca82-4962-b449-3555efa542b9" />
+
+<img width="642" height="447" alt="image" src="https://github.com/user-attachments/assets/4bd01b0d-1b43-4939-b6fb-d7941eb936a1" />
+
+I wanted to render this in blender using a plugin, but unfortunately the python versions don't match up
+
+<img width="996" height="87" alt="image" src="https://github.com/user-attachments/assets/1634313a-61a9-4a67-97eb-9868fade9a1f" />
+
+**Total Time Spent:** 1.5 hours
+
+
 # 6/25/26: Done with PCB completely (excluding silkscreen)
 
 I first started by finishing up all the connections for the remaining stuff that I set aside a while back
