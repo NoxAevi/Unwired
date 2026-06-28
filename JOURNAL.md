@@ -5,6 +5,17 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/27/26: Renders!
+
+Turns out on many linux distros (like arch) blender is packaged to use the system python rather than the python blender comes with, causing the version discrepency. Thus, I reinstalled blender-bin via the AUR and was able to successfully render the PCB (took a LONG time to render, but not that long to find the AUR version)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fded75e2-3c77-4cf9-a25c-e5565074e2a7" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e96b981c-7f1b-40cf-91c3-314434b981da" />
+
+
+**Total Time Spent:** 10 minutes
+
 # 6/26/26: Silkscreen & etc done
 
 So... turns out that the impedance is actually affected by stuff being coplanar, which is an option not in digikey's calculator
