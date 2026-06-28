@@ -5,6 +5,91 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/28/26: Enclosure bottom Modeled
+
+I decided to use onshape to do this because it was what I was most familiar with (after using it for the local science olympiad comp)
+
+After importing the STEP of the PCB, I had a bunch of sub-parts cluttering the bar, so I first had to put these all into a folder to make it neater
+
+<img width="1254" height="70" alt="image" src="https://github.com/user-attachments/assets/cb2b3fa6-241f-49ba-aa44-7f29413d983c" />
+
+Before starting, I wanted an idea of how tight stuff should be to stay compact while having a relatively loose fit (making it easy to assemble), so I found [this article](https://3dchimera.com/blogs/connecting-the-dots/3d-printing-tolerances-fits) which gave some guidelines
+
+<img width="1054" height="451" alt="image" src="https://github.com/user-attachments/assets/8c288b1d-7181-4bf8-9b65-de7f08b665f7" />
+
+I also realized that some of these parts that stick out might be a pain, so I plan to only add extra material where needed (for the screw holes)
+
+<img width="541" height="583" alt="image" src="https://github.com/user-attachments/assets/cb3747c0-8b0b-403f-9295-ff7bfebbeace" />
+
+So far, this leaves me with this, but afterwards I decided to have another square on the bottom right corner because it would probably be easier when screwing the pcb in/stability
+
+<img width="715" height="598" alt="image" src="https://github.com/user-attachments/assets/77a054a4-d22a-48a5-9901-6baec237bc53" />
+
+Unfortunately, I had a bit of trouble lining up the holes properly, using measurements from the sides of the PCB and a construction rectangle of the PCB
+
+<img width="483" height="786" alt="image" src="https://github.com/user-attachments/assets/555d6f5f-16e2-4f2a-ba42-97e4c7f26671" />
+
+Then I realized I was being stupid and using min-dist instead of dist to center (because obviously the holes would be different sizes from the PCB and where the heatset inserts would be places)
+
+This allowed me to easily line up the stuff, but when checking if there would be enough room for a screwhead, it wasn't looking too great (just this one spot, so all I had to do was resize a bit)
+
+<img width="1366" height="679" alt="image" src="https://github.com/user-attachments/assets/b75c9ddb-66a6-45bd-a68f-beb293dd25bd" />
+
+Then, to make sure that these dimensions would be good I sourced both the [heatset inserts](https://www.aliexpress.us/item/3256811859908423.html) (G3-L4-OD4.2) and the [screws](https://www.aliexpress.us/item/2251832857570651.html) (M3 5mm pan head) I would be using
+
+Following this, I tried to make the hole for the USB receptacle, but because of how cluttered this diagram was, it took a while to understand
+
+<img width="1167" height="889" alt="image" src="https://github.com/user-attachments/assets/fb92f5cb-0ce8-4033-a053-f8ed0faff503" />
+
+I was eventually able to get it looking pretty good
+
+<img width="739" height="391" alt="image" src="https://github.com/user-attachments/assets/298d193f-c891-4fd0-9585-ce7b8c337266" />
+
+But I was concerned that the connector would not be able to go through the wall thickness
+
+<img width="300" height="187" alt="image" src="https://github.com/user-attachments/assets/60ee994b-1f9d-4693-86ef-bffb392c8ccd" />
+
+So I changed the distance from the connector to the edge on the PCB and re-exported as a step file (and also had to rearrange some traces, unfortunately(
+
+<img width="685" height="343" alt="image" src="https://github.com/user-attachments/assets/2849e39d-d5d8-4e77-af58-c0102ef19216" />
+
+
+This helped, but it still needed to be moved up more
+
+<img width="643" height="787" alt="image" src="https://github.com/user-attachments/assets/46380abf-9636-406a-a581-1280b80afa3f" />
+
+After trying to move the PCB, the components on it didn't move along, so I tried reimporting the PCB, but that didn't fix it, so I decided that I'd have to only move the container instead
+
+<img width="889" height="363" alt="image" src="https://github.com/user-attachments/assets/cc5aaaa4-1f59-4f06-9af5-aab04f26720f" />
+
+Even after all this, there was still too much of a distance, so I had to shorten it
+
+<img width="679" height="406" alt="image" src="https://github.com/user-attachments/assets/df53fc2c-82ac-479e-87a5-e9834b3b066f" />
+
+I then finished the bottom part of the enclosure by adding holes for the screw head
+
+<img width="820" height="594" alt="image" src="https://github.com/user-attachments/assets/ec8643e9-e960-49ed-8d09-9d32f67f8797" />
+
+However, I was a bit concerned about how this might not necessarily be printable because of how there would be overhangs no matter which orientation (especially considering the USBC port, which should be printed face down, which would leave overhangs on the parts holding up the PCB)
+
+<img width="1146" height="763" alt="image" src="https://github.com/user-attachments/assets/396e9ed8-6593-435f-8d42-774d7fe188c4" />
+
+I decided to added another screw hole and have the front with the USB hole be a face plate
+
+<img width="540" height="342" alt="image" src="https://github.com/user-attachments/assets/c2c9f564-c5e6-400f-9060-10f05aae387d" />
+
+This does create one overhang on the bottom, but I believe it's fine since it's a circle (so less aggressive), and it's a heatset insert, so it really doesn't matter if it's precise at all
+
+I'll probably replicate the plate on the back as well to keep a consistent design, but that's a problem for tomorrow
+
+Overall, I realized how washed I am at CAD (it's been way too long) and also how difficult it is to come up with a custom design compared to following a diagram of somebody else's design (I had to thin way too long on how I would break up the enclosure)
+
+**Total Time Spent:** 3.5 hours
+
+
+
+
+
 # 6/27/26: Renders!
 
 Turns out on many linux distros (like arch) blender is packaged to use the system python rather than the python blender comes with, causing the version discrepency. Thus, I reinstalled blender-bin via the AUR and was able to successfully render the PCB (took a LONG time to render, but not that long to find the AUR version)
