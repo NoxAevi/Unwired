@@ -5,6 +5,71 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/29/26: Enclosure done
+
+I immediately realized I forgot to include a part for the screw heads to catch onto on the face plate, so I quickly added those in (so the screws would actually work)
+
+<img width="865" height="399" alt="image" src="https://github.com/user-attachments/assets/6106a3f5-7731-4256-b8b0-dc7d62e40162" />
+
+After I started the top part of the enclosure, I realized that this part on the bottom would be unneccessary because there would be a plate instead
+
+<img width="469" height="82" alt="image" src="https://github.com/user-attachments/assets/8b7876af-c442-4460-99a7-0b1b1764b882" />
+
+Since I would also a palces to put a screw hole later, I also extended the part holding up the PCB
+
+<img width="672" height="324" alt="image" src="https://github.com/user-attachments/assets/8e08de69-e6ad-4f61-93c5-af32b650ddf8" />
+
+After double checking the hackclub [stasis FAQ](https://stasis.hackclub.com/docs/design-resources) i found out that the 4.7mm hole diameter for the heatset insert was actually the OD on the insert itself, so I did some research on what size the hole should be
+
+I found [this](https://www.reddit.com/r/3Dprinting/comments/1pco9ah/heat_set_insert_question/) thread on reddit and noticed that the heatset inserts I sourced do not have the "pilot" side and that it might be better to use [these](https://www.aliexpress.us/item/3256806910034634.html) instead
+
+<img width="249" height="285" alt="image" src="https://github.com/user-attachments/assets/25c7d7d7-f078-4fa2-8120-71c58445c41d" />
+
+I resized the hole diameters (which broke some references that I had to go in and redo) and added counterbores to give room for the melted plastic to flow
+
+<img width="784" height="696" alt="image" src="https://github.com/user-attachments/assets/0b7f5342-71ac-4ef3-9ccf-695a041afca2" />
+
+I then changed some stuff to account for the bigger OD, and this kinda ruined the alignment of the top and bottom
+
+<img width="447" height="420" alt="image" src="https://github.com/user-attachments/assets/0d1cea76-6385-4790-99ea-c90418537193" />
+
+Thus, I had to use the rollback bar and go through each change and refit the dimensions
+
+<img width="304" height="177" alt="image" src="https://github.com/user-attachments/assets/62d4346f-b232-4b0f-9e57-15fcf1758f68" />
+
+This allowed me to get a perfect fit
+
+<img width="559" height="477" alt="image" src="https://github.com/user-attachments/assets/12e8a622-3615-4644-8fdd-44a7d03a4b20" />
+
+I then added the screw holes to match up with the top and bottom, which was pretty quick since i'd already done it quite a bit to get to this point
+
+<img width="574" height="505" alt="image" src="https://github.com/user-attachments/assets/ecb0dd6c-f133-421f-aa05-0dbfe7ee0bd5" />
+
+<img width="304" height="249" alt="image" src="https://github.com/user-attachments/assets/0a5449b8-33f7-48cb-9e40-f46107846070" />
+
+Now all that's left is stuff for the button, and a tiny hole for the LED
+
+Although I initially believed that putting the hole in the direct center would look better, I feel that it's nicer with the hole in line with the USB C hole
+
+<img width="525" height="493" alt="image" src="https://github.com/user-attachments/assets/699fa47c-3b4a-4ae2-96de-458326989756" />
+
+<img width="877" height="723" alt="image" src="https://github.com/user-attachments/assets/5ef16f31-1465-4a21-8034-f7e2909da146" />
+
+Then, I made the button and polished everything up with fillets
+
+When making the button, I added extra material so it would be able to stay in the enclosure & be firm/not have too much tilting, but this was really annoying to add because of how the U shaped case makes it difficult to see the gap in some areas (on the right in the picture below mainly)
+
+<img width="775" height="361" alt="image" src="https://github.com/user-attachments/assets/ca976218-d906-4032-8d73-6f5174076f70" />
+
+Anyways these two are the final pictures for the enclosure
+
+
+<img width="537" height="517" alt="image" src="https://github.com/user-attachments/assets/851cfb79-b26b-45c5-a845-a2076ae8da58" />
+
+<img width="735" height="600" alt="image" src="https://github.com/user-attachments/assets/069ad737-3915-4dcc-bf48-e9bc4cd9256c" />
+
+**Total Time Spent:** 2.5 hours
+
 # 6/28/26: Enclosure bottom Modeled
 
 I decided to use onshape to do this because it was what I was most familiar with (after using it for the local science olympiad comp)
