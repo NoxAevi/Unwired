@@ -15,6 +15,11 @@ This wasn't too bad, and I feel like I should be ready to start working on the f
 
 What was unexpected however, was that there were a couple similarities between C and Verilog, such as the bitwise operators, ternary, and switch statements
 
+<img width="786" height="292" alt="image" src="https://github.com/user-attachments/assets/d028e290-295a-46d4-b219-fb8ab0551868" />
+
+<img width="736" height="43" alt="image" src="https://github.com/user-attachments/assets/49a64428-8380-42cb-9826-118a2de33d40" />
+
+
 **Total Time Spent**: 1.5 hours
 
 # 6/29/26: Enclosure done
