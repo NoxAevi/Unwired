@@ -5,6 +5,18 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 6/30/26: Learned basic C syntax
+
+I haven't really coded in C before at all, so the pretty obvious thing to do before starting on firmware would be to start learning the basic syntax of C
+
+I followed along with this video: https://www.youtube.com/watch?v=GqEeOrDk5DI, which involves creating the ls command from scratch and looked up other videos when necessary to understand what was going on, such as [what are pointers](https://www.youtube.com/watch?v=2ybLD6_2gKM&t=438s) and how they work
+
+This wasn't too bad, and I feel like I should be ready to start working on the firmware tomorrow
+
+What was unexpected however, was that there were a couple similarities between C and Verilog, such as the bitwise operators, ternary, and switch statements
+
+**Total Time Spent**: 1.5 hours
+
 # 6/29/26: Enclosure done
 
 I immediately realized I forgot to include a part for the screw heads to catch onto on the face plate, so I quickly added those in (so the screws would actually work)
