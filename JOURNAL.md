@@ -5,6 +5,19 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/02/26: Started Firmware
+
+I first started by looking into how to program the nRF52840, which was fast since this was directly on their website.
+
+Since their SDK was based on zephyr, I decided to go through their website first and set up the dependencies, which turned out to kinda be a waste of time because as I later found out, it was already included in the nRF guide
+
+<img width="852" height="160" alt="image" src="https://github.com/user-attachments/assets/01be8395-7eef-44ae-8072-d051f43a9aea" />
+
+After installing the SDK for vsc, it took quite a while to download, so during that time I briefed over the next steps, but felt that it would be better to be able to follow along once the SDK is done downloading
+
+
+**Total Time Spent:** 0.5 hours
+
 # 6/30/26: Learned basic C syntax
 
 I haven't really coded in C before at all, so the pretty obvious thing to do before starting on firmware would be to start learning the basic syntax of C
