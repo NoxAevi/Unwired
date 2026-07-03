@@ -5,6 +5,23 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/03/26: Created application and tried making custom board
+
+Following the guide to create an nRF application was pretty straightforward, but updating west took a really long time
+
+<img width="939" height="958" alt="image" src="https://github.com/user-attachments/assets/011f6f47-f833-4320-92a9-a5e374c61d8e" />
+
+While continuing on the instructions, I found out that there were Zephyr modules, so I immediately went to see if there was one for the MAX3421E, and I found [something](https://docs.zephyrproject.org/latest/boards/shields/sparkfun_max3421e/doc/index.html#programming) I could most likely adapt to use in my project
+
+It was kinda weird how the automatic setup calls the application folder "application" but the other pages in the docs refer to it as "app" which took a couple of minutes to figure out
+
+<img width="727" height="231" alt="image" src="https://github.com/user-attachments/assets/60cce415-fa30-45f3-931a-f484cd06795f" />
+<img width="832" height="271" alt="image" src="https://github.com/user-attachments/assets/e4b543ef-f712-44b4-bb55-de9d8545dcdc" />
+
+FOllowing this, I tried creating a custom board and it was really confusing, especially the .dts board file
+
+**Total Time Spent:** 1 hour
+
 # 7/02/26: Started Firmware
 
 I first started by looking into how to program the nRF52840, which was fast since this was directly on their website.
