@@ -1,0 +1,6 @@
+board:
+  name: unwired
+  full_name: unwired
+  vendor: NoxAevi
+  socs:
+    - name: nrf52840

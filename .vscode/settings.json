@@ -1,6 +1,7 @@
 {
     "nrf-connect.applications": [
         "${workspaceFolder}/FIRMWARE/nRF",
-        "${workspaceFolder}/FIRMWARE/nRF/application"
+        "${workspaceFolder}/FIRMWARE/nRF/application",
+        "${workspaceFolder}/FIRMWARE/unwired"
     ]
 }

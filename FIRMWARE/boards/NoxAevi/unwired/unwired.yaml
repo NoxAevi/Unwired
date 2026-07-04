@@ -1,0 +1,10 @@
+identifier: unwired/nrf52840
+name: unwired
+vendor: NoxAevi
+type: mcu
+arch: arm
+ram: 256
+flash: 472
+toolchain:
+  - zephyr
+supported: []
