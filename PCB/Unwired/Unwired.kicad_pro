@@ -130,10 +130,6 @@
           ""
         ],
         [
-          "hole_clearance|105752230|46495624|2750a72e-a108-444d-bb3e-2bb26345424b|00962ce6-0cd9-4f0d-950b-b4013dd1d2e8",
-          ""
-        ],
-        [
           "hole_clearance|114190000|96290000|5b9e0dbb-4880-4da3-ad71-85019782c3d6|4abc1def-4bef-4ca4-a72a-2071045da2c2",
           ""
         ],
@@ -171,6 +167,50 @@
         ],
         [
           "silk_over_copper|106020000|78360000|35dd86ae-e1fc-4fd7-9594-0131d306b64b|d140da28-5fda-45a8-8c99-934256208aeb",
+          ""
+        ],
+        [
+          "silk_overlap|118376752|54922875|8264f6fb-7a6f-456b-95bf-40b787e61154|e5246bb3-5c8e-4921-9402-c84ab9f0e137",
+          ""
+        ],
+        [
+          "silk_overlap|118397743|55125000|25aefe99-8a48-4a6c-acc4-46655b055c6a|e5246bb3-5c8e-4921-9402-c84ab9f0e137",
+          ""
+        ],
+        [
+          "silk_overlap|118670192|55433538|59ae88aa-c17b-46dd-9603-34551c5c7158|e5246bb3-5c8e-4921-9402-c84ab9f0e137",
+          ""
+        ],
+        [
+          "silk_overlap|118739451|54667137|a54a400e-1c3f-47eb-aea5-5ae6c99acbff|de83b39c-eac0-4e38-b93c-e9e0ead735d7",
+          ""
+        ],
+        [
+          "silk_overlap|118807687|55463419|4b7d4254-6061-40e7-8c72-cc04c861992d|e5246bb3-5c8e-4921-9402-c84ab9f0e137",
+          ""
+        ],
+        [
+          "silk_overlap|120656677|57110289|94e67127-825a-451d-98d8-fd02e5eeff51|d2d80f0e-ab9b-4b82-ad5f-bea5ef0ae670",
+          ""
+        ],
+        [
+          "silk_overlap|120757668|56852521|1cf39a31-7657-4eca-80f8-4bac924c34c6|ffd9b32e-ba41-49f4-9819-5ea8fcf8cd09",
+          ""
+        ],
+        [
+          "silk_overlap|120911601|56639933|5b0e89ec-9fd5-43a4-9ef3-45f26b411f43|ffd9b32e-ba41-49f4-9819-5ea8fcf8cd09",
+          ""
+        ],
+        [
+          "silk_overlap|121176966|56363298|ef693979-cc16-4b2e-88d3-841c9d048319|ffd9b32e-ba41-49f4-9819-5ea8fcf8cd09",
+          ""
+        ],
+        [
+          "silk_overlap|122048592|56219990|02a269d0-d116-4210-baf4-4a8146878906|9081270c-fc66-4ab2-ad31-8bf755f4c24c",
+          ""
+        ],
+        [
+          "silk_overlap|123095583|56431112|6c8aebcf-0c55-4a66-8151-d3502b1ac111|b6f0f255-70f5-4ade-b548-256dad1ecf64",
           ""
         ],
         [
@@ -816,7 +856,7 @@
         "uuid": "115058f9-d745-40f1-b1d5-23875c8eaf91"
       }
     ],
-    "used_designators": "H1-4",
+    "used_designators": "#PWR43,#PWR84,AE2,H1-4",
     "variants": []
   },
   "sheets": [
