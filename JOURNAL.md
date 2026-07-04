@@ -5,7 +5,7 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
-# 7/04/26: (I wished to) Finish custom board definition
+# 7/03/26: (I wished to) Finish custom board definition
 
 I found a tutorial on youtube by nordic that goes over making a custom board, and after skimming through it, it seems pretty detailed and easy to follow, so I'm going to restart using that
 
