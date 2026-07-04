@@ -5,6 +5,48 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/04/26: (I wished to) Finish custom board definition
+
+I found a tutorial on youtube by nordic that goes over making a custom board, and after skimming through it, it seems pretty detailed and easy to follow, so I'm going to restart using that
+
+Also, i find it weird that there's two applications, so i'm going to recreate them to see if I get the same result
+
+<img width="420" height="231" alt="image" src="https://github.com/user-attachments/assets/c02db935-7591-415b-872e-9590e27e51b4" />
+
+When creating the custom board, I needed to set where the board was going to be, which depends on my username, so i'm just putting this here to (hopefully) remind me to mention this in the readmee for those that want to compile the code themselves
+
+<img width="1143" height="247" alt="image" src="https://github.com/user-attachments/assets/17e1db53-9903-455f-882a-64dab24aeb38" />
+
+Turns out, there was a much simpler way to create a new board, which was by using the UI (which I didn't look at closely and didn't notice the create board option)
+
+<img width="412" height="40" alt="image" src="https://github.com/user-attachments/assets/a1fc56c5-d2ec-4385-b72c-01846033643c" />
+
+This automatically provided some stuff like the Kconfig, allowing me to not really worry about it
+
+<img width="871" height="249" alt="image" src="https://github.com/user-attachments/assets/3e12bf2d-5eba-40d5-b177-bf2a94406be9" />
+
+When filling out the necessary parts of the config for the board, I found that there was a module for the MAX3421E that I can use (yippee!!!), but I didn't know what the first dependency was and how to include it, but I assumed it was to be done in a separate part (noting the dependency here for future reference: DT_HAS_MAXIM_MAX3421E_SPI_ENABLED)
+
+<img width="1014" height="582" alt="image" src="https://github.com/user-attachments/assets/be158725-1c8a-4a39-adf4-9ad105798602" />
+
+Upon looking at the device tree stuff, the dependency is a binding that I have to include
+
+When trying to create a build config to be able to edit device tree via a GUI, I found that the SDK is unable to find jlink despite it being installed
+
+<img width="735" height="225" alt="image" src="https://github.com/user-attachments/assets/0c15f1a9-20dd-443a-a93b-0adc169dc2b7" />
+
+This was fixed with the AUR package (and the opt dependency) nrfutil
+
+<img width="865" height="666" alt="image" src="https://github.com/user-attachments/assets/56d27004-52d0-4ec7-9e2b-d7689262b7dd" />
+
+After checking nix pkgs (i've been interested in nix) i found that it's already in their repo (i lowk wanna switch to nixOS but im kinda lazy)
+
+ANYWAYS I wanted to complete the board config by today, but it's kinda unfortunate that random stuff happens, so oh well
+
+**Total Time Spent:** 1.25 hours
+
+
+
 # 7/03/26: Created application and tried making custom board
 
 Following the guide to create an nRF application was pretty straightforward, but updating west took a really long time
