@@ -5,6 +5,37 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/04/26: Finished custon board definition
+
+When trying to create a build configuration for the custom board, i got this error, and I couldn't find much about it online, so I'm going to try and create the board again from scratch
+
+<img width="1257" height="385" alt="image" src="https://github.com/user-attachments/assets/1302580b-ae2f-465d-80a6-4ce0e0325f0f" />
+
+This time, instead of editing any of the board files, I went straight to the build configuration to at least have a working point
+
+This worked immediately, and after I went to go back and add the kconfig options, I found out that the tutorial did something that can't be assigned anymore
+
+<img width="423" height="309" alt="image" src="https://github.com/user-attachments/assets/ad9186b2-02ed-40ce-b4e6-e7938b87c02f" />
+
+Next is to implement the device tree
+
+Off the bat, there were already some problems, but after a quick search, it seems that it's okay to ignore them
+
+<img width="1437" height="268" alt="image" src="https://github.com/user-attachments/assets/8dba6ca8-21e9-49ee-a991-0111c12839cc" />
+
+Doing the device tree took a long time, especially with me not knowing what components there are/if i needed a specific device for interrupts and stuff, but during this process I realized that I left the reset on the host controller hanging, so I had to go back into the pcb design files and pull it up
+
+<img width="303" height="249" alt="image" src="https://github.com/user-attachments/assets/d50aa1ed-38d6-421e-99b9-444ba9bc7dd0" />
+
+Finally, I was able to get the build to properly compile (for the hello world example)!!!
+
+<img width="1419" height="300" alt="image" src="https://github.com/user-attachments/assets/c18fef1b-b669-4cf2-91bd-5737eb2cbce6" />
+
+<img width="397" height="73" alt="image" src="https://github.com/user-attachments/assets/9f9d1d38-a0ce-4c0e-891c-8c05d9fcc34e" />
+
+
+**Total Time Spent:** 2 hours 40 minutes
+
 # 7/03/26: (I wished to) Finish custom board definition
 
 I found a tutorial on youtube by nordic that goes over making a custom board, and after skimming through it, it seems pretty detailed and easy to follow, so I'm going to restart using that
