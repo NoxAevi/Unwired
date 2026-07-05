@@ -1,0 +1,12 @@
+//battery management (in gotham city)
+include <ccman>
+
+write_reg(reg,dat) //write to register
+
+read_reg(reg) //read register
+
+change_max_current(mA) //write to current register (if mA is a good option, add rounding) also changes cc config
+
+set_boost_mode(pin) // set pin to turn on boost mode, changes cc conf
+
+off_boost_mode(pin) //set pin to turn off boost mode, changes cc conf

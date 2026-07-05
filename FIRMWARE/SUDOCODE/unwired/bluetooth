@@ -1,0 +1,17 @@
+define bluetooth configuration here, such as name
+
+void broadcast(){ //used to start broadcasting / BT pairing mode
+    blue.on()
+}
+void stop_broadcast() //used to stop pairing (like if the device is turned off w/o finishing the pairing)
+    blue.off()
+
+void disconnect() //disconnect/unpair
+    blue.off()
+    wait(0.1)
+    blue.on()
+    wait(0.1)
+    blue.off()
+    
+void send_data(data) //sends a data packet to paired host (like mouse click or other HID event)
+

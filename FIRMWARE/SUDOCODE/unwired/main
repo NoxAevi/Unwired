@@ -1,0 +1,89 @@
+include "bluetooth.h"
+include "batman.h"
+include "ccman.h"
+include <max3421e.h>
+
+ON_OFF_TIME = 5
+PAIRING_TIME = 3
+
+is_on = false;
+is_paired = false;
+
+turn_off(){
+    off_boost_mode(BOOST_PIN)
+    red.on()
+    wait(0.2)
+    red.off()
+}
+
+turn_on(){
+    set_boost_mode(BOOST_PIN)
+    green.on()
+    wait(0.2)
+    green.off()
+}
+
+long last_button_press //set to time.now(), runtime, or equivalent
+
+button_action = false;
+
+button_press_event()
+    int dur = time.now()-last_button_press;
+    if (dur>ON_OFF_TIME){
+        is_on = !is_on
+        if (is_on){
+            turn_on();
+        }
+        else{
+            turn_off();
+        }
+        button_action = true;
+    }
+    else if (is_on && dur>PAIRING_TIME){
+        if (is_paired){
+            broadcast();
+        }
+        else{
+            disconnect();
+        }
+        button_action = true;
+    }
+    
+
+on_button_release():
+    if (!button_action){
+        cycle_mode();
+    }
+    button_action = false;
+
+on_bat_percent_change(){
+    bat_percent = check_bat_percent();
+    if (bat_percent<10){
+        red.on()
+        wait(0.1);
+        red.off()
+    }
+}
+
+device_supported = false;
+initialized = false;
+
+supported_devices = {
+    hex1
+    hex2
+    hex3
+}
+
+on_usb_update(){
+    if (!initialized){
+        dat = read_usb_data()
+        if (dat in supported_devices){ //maybe use switch case here instead if easier to implement in C
+            device_supported = true;
+        }
+        initialized = true;
+    }
+    else if (initialized && device_supported){
+        dat = read_usb_data();
+        send_data(dat); #might have to process this data first since the SPI, USB, and bluetooth packet might be different
+    }
+}

@@ -1,0 +1,5 @@
+read_reg(reg) //read register
+
+write_reg(reg,dat) //write to register
+
+set_cc(bool host, max_current) //set register to determine if host or not & maximum current device can handle
