@@ -5,6 +5,26 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/05/26: Finished Sudocode
+
+Since a lot of the code that's going to end up on the nRF requires a lot of register stuff, including the MAX3421E, I'm going to write sudocode instead of fully fledged code. This is mainly because some stuff that I might need to process, such as a mouse click, will change the data registers in a way that I cannot know without testing it
+
+I made multiple files and coded the logic as it would be in the final product
+
+<img width="895" height="196" alt="image" src="https://github.com/user-attachments/assets/a7cf49aa-657a-452f-bdd8-5a841968e3b7" />
+
+This part took about half an hour, BUT i realized that for some reason, there was a nested git repo for the actual C code (the hello world example), making it not upload
+
+When trying to fix this, I created an empty folder blob that I couldn't delete, which caused me to scramble about for a while. I eventually was able to delete it by cloning the repo in a separate folder and removing it
+
+<img width="753" height="528" alt="image" src="https://github.com/user-attachments/assets/ebe5bb32-3ec5-45db-82f3-34476751be69" />
+
+This somehow fixed it and after pulling from github I was able to push the firmware
+
+This ended up taking another half hour to figure out
+
+**Total Time Spent:** 1 hour
+
 # 7/04/26: Finished custon board definition
 
 When trying to create a build configuration for the custom board, i got this error, and I couldn't find much about it online, so I'm going to try and create the board again from scratch
