@@ -53,16 +53,16 @@ Unwired is a project that aims to take a USB peripheral (like a mouse/keyboard) 
 |LCSC              |PARTS         |PCB PARTS|5.92 |0       |Shipping combined with above                    |      |      |      |5.92    |
 |                  |              |         |     |        |                                                |      |      |      |        |
 |digikey           |PARTS         |PCB PARTS|42.96|        |                                                |      |      |      |65.25   |
-|                  |nRF dongle    |1        |11.9 |        |                                                |      |      |      |        |
-|                  |Pi Pico       |1        |5.4  |        |Prices excluding returning/new customer discount|      |      |      |        |
+|                  |[nRF dongle](https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF52840-DONGLE/9491124)    |1        |11.9 |        |                                                |      |      |      |        |
+|                  |[Pi Pico](https://www.digikey.com/en/products/detail/raspberry-pi/SC0917/16608257)       |1        |5.4  |        |Prices excluding returning/new customer discount|      |      |      |        |
 |                  |              |         |     |4.99    |                                                |      |      |      |        |
 |                  |              |         |     |        |                                                |      |      |      |        |
 |AliExpress        |              |         |     |        |                                                |      |      |      |24.86   |
-|                  |thermistor    |5        |1.38 |3.58    |103AT-2                                         |      |      |      |        |
-|                  |battery       |1        |9.11 |0       |JST                                             |      |      |      |        |
-|                  |JST pin       |2        |1.51 |0       |top entry                                       |      |      |      |        |
-|                  |Screws        |100      |2.27 |0       |M3 5mm                                          |      |      |      |        |
-|                  |Heatset Insert|100      |7.01 |0       |m3 D5 L4                                        |      |      |      |        |
+|                  |[thermistor](https://www.aliexpress.us/item/3256804241619389.html)    |5        |1.38 |3.58    |103AT-2                                         |      |      |      |        |
+|                  |[battery](https://www.aliexpress.us/item/3256812250807286.html)       |1        |9.11 |0       |JST                                             |      |      |      |        |
+|                  |[JST pin](https://www.aliexpress.us/item/3256804769340392.html)       |2        |1.51 |0       |top entry                                       |      |      |      |        |
+|                  |[Screws](https://www.aliexpress.us/item/2251832857570651.html)        |100      |2.27 |0       |M3 5mm                                          |      |      |      |        |
+|                  |[Heatset Insert](https://www.aliexpress.us/item/3256806910034634.html)|100      |7.01 |0       |m3 D5 L4                                        |      |      |      |        |
 |                  |              |         |     |        |                                                |      |      |      |        |
 |ENCLOSURE         |              |1        |0    |0       |friend will be printing it                      |      |      |      |        |
 |SOLDERING SUPPLIES|              |NA       |0    |0       |Self-provided                                   |      |      |      |        |
