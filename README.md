@@ -1,7 +1,5 @@
 # Unwired
 
-## TO-DO: ADD GERBERS, BOM (README & .csv)
-
 **Man, don't you just hate how so many devices are wired instead of wireless? Well, I sure do.**
 
 Unwired is a project that aims to take a USB peripheral (like a mouse/keyboard) and allow you to connect to it wirelessly while simultaniously being as compact as possible because wired stuff can be pretty annoying at times
@@ -43,3 +41,31 @@ Unwired is a project that aims to take a USB peripheral (like a mouse/keyboard) 
 ## Production
 
 ### BOM
+
+|CATEGORY          |ITEM          |QUANTITY |PRICE|SHIPPING|COMMENT                                         |      |      |      |SUBTOTAL|
+|------------------|--------------|---------|-----|--------|------------------------------------------------|------|------|------|--------|
+|                  |              |         |     |        |                                                |      |      |      |        |
+|JLCPCB            |              |         |     |        |Estimate $5 Coupon                              |      |      |      |21.68   |
+|                  |PCB           |5        |3.2  |        |                                                |      |      |      |        |
+|                  |STENCIL       |1        |8    |        |                                                |      |      |      |        |
+|                  |              |         |     |10.48   |                                                |      |      |      |        |
+|                  |              |         |     |        |                                                |      |      |      |        |
+|LCSC              |PARTS         |PCB PARTS|5.92 |0       |Shipping combined with above                    |      |      |      |5.92    |
+|                  |              |         |     |        |                                                |      |      |      |        |
+|digikey           |PARTS         |PCB PARTS|42.96|        |                                                |      |      |      |65.25   |
+|                  |nRF dongle    |1        |11.9 |        |                                                |      |      |      |        |
+|                  |Pi Pico       |1        |5.4  |        |Prices excluding returning/new customer discount|      |      |      |        |
+|                  |              |         |     |4.99    |                                                |      |      |      |        |
+|                  |              |         |     |        |                                                |      |      |      |        |
+|AliExpress        |              |         |     |        |                                                |      |      |      |24.86   |
+|                  |thermistor    |5        |1.38 |3.58    |103AT-2                                         |      |      |      |        |
+|                  |battery       |1        |9.11 |0       |JST                                             |      |      |      |        |
+|                  |JST pin       |2        |1.51 |0       |top entry                                       |      |      |      |        |
+|                  |Screws        |100      |2.27 |0       |M3 5mm                                          |      |      |      |        |
+|                  |Heatset Insert|100      |7.01 |0       |m3 D5 L4                                        |      |      |      |        |
+|                  |              |         |     |        |                                                |      |      |      |        |
+|ENCLOSURE         |              |1        |0    |0       |friend will be printing it                      |      |      |      |        |
+|SOLDERING SUPPLIES|              |NA       |0    |0       |Self-provided                                   |      |      |      |        |
+|                  |              |         |     |        |                                                |      |      |      |        |
+|TOTAL             |              |         |     |        |                                                |      |      |      |117.71  |
+
