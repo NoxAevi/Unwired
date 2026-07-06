@@ -5,6 +5,39 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/06/26: Sourced parts and added BOM
+
+I first started with determining the cost for the PCB
+
+One thing that I had to figure out was whether or not to use electropolishing, which required me to check the pin pitch of the ICs
+
+<img width="727" height="226" alt="image" src="https://github.com/user-attachments/assets/3954e00d-15ad-4628-a69d-072536c0a3f6" />
+
+Since the nRF52840 uses 0.4mm pin pitch, I decided that it would be a good idea to include it, and luckily, it's not that expensive
+
+<img width="651" height="456" alt="image" src="https://github.com/user-attachments/assets/1434b85c-c91f-4551-9547-e4ded339b763" />
+
+This is the estimated quote for the PCB, excluding any coupons (which I believe I should be able to use a $5 one)
+
+LCSC ran out of stock of the nRF52840 QFAA (the QFN footprint one), so I had to use other venders to source the parts instead
+
+<img width="1861" height="766" alt="image" src="https://github.com/user-attachments/assets/e862cbcc-ffb6-4f88-a203-43b7618b7221" />
+
+I was keeping track of both mouser and digi-key prices, but unfortunately mouser does not have the footprint i need for the USB mux
+
+<img width="882" height="849" alt="image" src="https://github.com/user-attachments/assets/901465be-42fb-46ca-be69-ee3922f226b7" />
+
+When I got to the LEDs, I couldn't find any 0603 ones on digikey, which meant that I had to use LCSC for these components. Either way, digikey sourcing wasn't a waste of time because to get cheap shipping for global direct, orders have to be under 60 dollars, and when combined with the PCB stuff would've probably gotten too expensive (also it ships from china, meaning tariffs would be a pain)
+
+I also added some stuff that would be necessary, such as a pi pico (rp2040) for the SWD programming on digikey and the nRF52840 dongle (to allow dongle support if the user doesn't want to use BT or doesn't have BT)
+
+THe most annoying part of this was how laggy digikey was being, making this take an absurd amount of time
+
+Also, most of the digikey stuff won't be linked since it's stuff that's already on the pcb schematics
+
+
+**Total Time Spent:** 3 hours
+
 # 7/05/26: Finished Sudocode
 
 Since a lot of the code that's going to end up on the nRF requires a lot of register stuff, including the MAX3421E, I'm going to write sudocode instead of fully fledged code. This is mainly because some stuff that I might need to process, such as a mouse click, will change the data registers in a way that I cannot know without testing it
