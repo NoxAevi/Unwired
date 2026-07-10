@@ -5,6 +5,15 @@ Description: A small battery-powered device that turns wired peripherals (mainly
 Created: 2/27/26
 ---
 
+# 7/10/26: Made PCB parts BOM to be more descriptive
+
+self-explanatory (i went into digikey and lcsc carts and copied the part IDs)
+
+<img width="1158" height="468" alt="image" src="https://github.com/user-attachments/assets/26586f10-474f-4fb2-8176-5859931c148f" />
+
+
+**Total Time Spent:** 5m
+
 # 7/06/26: Sourced parts and added BOM
 
 I first started with determining the cost for the PCB
