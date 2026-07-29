@@ -57,15 +57,16 @@ Unwired is a project that aims to take a USB peripheral (like a mouse/keyboard) 
 |                  |[Pi Pico](https://www.digikey.com/en/products/detail/raspberry-pi/SC0917/16608257)       |1        |5.4  |        |Prices excluding returning/new customer discount|      |      |      |        |
 |                  |              |         |     |4.99    |                                                |      |      |      |        |
 |                  |              |         |     |        |                                                |      |      |      |        |
-|AliExpress        |              |         |     |        |                                                |      |      |      |24.86   |
+|AliExpress        |              |         |     |        |                                                |      |      |      |26.79   |
 |                  |[thermistor](https://www.aliexpress.us/item/3256804241619389.html)    |5        |1.38 |3.58    |103AT-2                                         |      |      |      |        |
 |                  |[battery](https://www.aliexpress.us/item/3256812250807286.html)       |1        |9.11 |0       |JST                                             |      |      |      |        |
 |                  |[JST pin](https://www.aliexpress.us/item/3256804769340392.html)       |2        |1.51 |0       |top entry                                       |      |      |      |        |
 |                  |[Screws](https://www.aliexpress.us/item/2251832857570651.html)        |100      |2.27 |0       |M3 5mm                                          |      |      |      |        |
 |                  |[Heatset Insert](https://www.aliexpress.us/item/3256806910034634.html)|100      |7.01 |0       |m3 D5 L4                                        |      |      |      |        |
+|                  |[Level Shifter](https://www.aliexpress.us/item/3256807345265894.html)|5      |1.93 |0       |Incase I brick the nRF                                        |      |      |      |        |
 |                  |              |         |     |        |                                                |      |      |      |        |
 |ENCLOSURE         |              |1        |0    |0       |friend will be printing it                      |      |      |      |        |
 |SOLDERING SUPPLIES|              |NA       |0    |0       |Self-provided                                   |      |      |      |        |
 |                  |              |         |     |        |                                                |      |      |      |        |
-|TOTAL             |              |         |     |        |                                                |      |      |      |117.71  |
+|TOTAL             |              |         |     |        |                                                |      |      |      |119.64  |
 
