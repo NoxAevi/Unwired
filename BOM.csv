@@ -12,14 +12,15 @@ digikey,PARTS,PCB PARTS,42.96,,,,,,65.25
 ,Pi Pico,1,5.4,,Prices excluding returning/new customer discount,,,,
 ,,,,4.99,,,,,
 ,,,,,,,,,
-AliExpress,,,,,,,,,24.86
+AliExpress,,,,,,,,,26.79
 ,thermistor,5,1.38,3.58,103AT-2,,,,
 ,battery,1,9.11,0,JST,,,,
 ,JST pin,2,1.51,0,top entry,,,,
 ,Screws,100,2.27,0,M3 5mm,,,,
 ,Heatset Insert,100,7.01,0,m3 D5 L4,,,,
+,Level Shifter,5,1.93,0,,Incase I mess up programming/brick the nRF,,,
 ,,,,,,,,,
 ENCLOSURE,,1,0,0,friend will be printing it,,,,
 SOLDERING SUPPLIES,,NA,0,0,Self-provided,,,,
 ,,,,,,,,,
-TOTAL,,,,,,,,,117.71
+TOTAL,,,,,,,,,119.64
