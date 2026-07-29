@@ -18,7 +18,7 @@ AliExpress,,,,,,,,,26.79
 ,JST pin,2,1.51,0,top entry,,,,
 ,Screws,100,2.27,0,M3 5mm,,,,
 ,Heatset Insert,100,7.01,0,m3 D5 L4,,,,
-,Level Shifter,5,1.93,0,,Incase I mess up programming/brick the nRF,,,
+,Level Shifter,5,1.93,0,Incase I mess up programming/brick the nRF,,,,
 ,,,,,,,,,
 ENCLOSURE,,1,0,0,friend will be printing it,,,,
 SOLDERING SUPPLIES,,NA,0,0,Self-provided,,,,
